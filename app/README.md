@@ -27,7 +27,7 @@ $ npm run start:prod
 
 ## To-do
 
-- [X] Dockerizar proyecto
+- [ ] Dockerizar proyecto
 - [ ] Agregar fuente de datos y schema
 - [ ] Crear servicio para sincronización
 - [ ] Publicar más domain cases

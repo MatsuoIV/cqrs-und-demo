@@ -1,0 +1,21 @@
+version: '2'
+services:
+  backend:
+    image: und-dev-cqrs-demo:dev
+    container_name: und-dev-cqrs-demo_backend
+    volumes:
+      - ./app/:/home/node/app/:rw
+    entrypoint: npm run start:dev
+    ports:
+      - 3000:3000
+
+  mysql:
+    image: und-dev-cqrs-demo:mysql
+    container_name: und-dev-cqrs-demo_mysql
+    ports:
+      - 3309:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - ./data/db/mysql:/var/lib/mysql
+      - ./docker/mysql/initdb:/docker-entrypoint-initdb.d
