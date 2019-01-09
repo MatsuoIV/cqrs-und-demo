@@ -15,7 +15,9 @@ services:
     ports:
       - 3309:3306
     environment:
+      MYSQL_DATABASE: mdb_apt_jobs
       MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER : root
     volumes:
-      - ./data/db/mysql:/var/lib/mysql
-      - ./docker/mysql/initdb:/docker-entrypoint-initdb.d
+      - ./docker/mysql/resources:/docker-entrypoint-initdb.d
+    command: mysqld --sql_mode=""
